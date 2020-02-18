@@ -19,3 +19,4 @@ for gene in GENES:
 
     # -- Calculates the maximum
     m = max(ll)
+#practice 8 as professor did
