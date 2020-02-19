@@ -1,22 +1,17 @@
-from Seq0 import*
+from Seq0 import *
 
-PRACTICE = 8
 FOLDER = "../Session04/"
-EXT = ".txt"
-GENES = ["U5", "ADA", "FRAT1", "FXN", "RNU6_269P"]
 BASES = ["A", "C", "T", "G"]
+list_genes = ["U5", "ADA", "FRAT1", "FXN", "RNU6_269P"]
 
-print(f"-----|Exercice {PRACTICE}|-----")
+for element in list_genes:
+    sequence = seq_read_fasta(FOLDER + element + ".txt")
+    dict_bases = seq_count(sequence)
+    min_value = 0
+    best_base = ""
+    for base, value in dict_bases.items():
+        while value > min_value:
+            min_value = value
+            best_base = base
 
-for gene in GENES:
-    seq = seq_read_fasta(FOLDER + gene + EXT)
-
-    # --Dictionary with the values
-    d = seq_count(seq)
-
-    # --Create a list with all the values
-    ll = list(d.values())
-
-    # -- Calculates the maximum
-    m = max(ll)
-#practice 8 as professor did
+    print("Gene", element, ": Most frequent base: ", best_base)
