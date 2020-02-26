@@ -1,3 +1,3 @@
-Machine	        Interface	    Date	    Place	    IP
-mobile	        Wifi          25/02/2020    Lab      10.3.33.93
-Lab computer	Wire          25/02/2020    Lab         
+Machine	        Interface	    Date	    Place	        IP
+mobile	        Wifi          25/02/2020   Alcorcón     10.3.33.93
+Lab computer	Wire          25/02/2020   Alcorcón   212.128.253.143
