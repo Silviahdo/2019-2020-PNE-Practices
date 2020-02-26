@@ -16,7 +16,7 @@ s.connect((IP, PORT))
 
 # Send data. No strings can be send, only bytes
 # It necesary to encode the string into bytes
-s.send(str.encode("Vendo Opel Corsa"))
+s.send(str.encode("hola"))
 
 # -- Receive data from the server (el utf es para que el ordenador pueda reconocer caracteres especiales )
 msg = s.recv(2000)
