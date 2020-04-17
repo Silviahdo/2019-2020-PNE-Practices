@@ -1,0 +1,224 @@
+import http.server
+import socketserver
+import termcolor
+from pathlib import Path
+from Seq1 import Seq
+
+# Define the Server's port
+PORT = 8080
+
+
+# -- This is for preventing the error: "Port already in use"
+socketserver.TCPServer.allow_reuse_address = True
+
+# -- Sequences for the GET command
+SEQ_GET = [
+    "ACCTCCTCTCCAGCAATGCCAACCCCAGTCCAGGCCCCCATCCGCCCAGGATCTCGATCA",
+    "AAAAACATTAATCTGTGGCCTTTCTTTGCCATTTCCAACTCTGCCACCTCCATCGAACGA",
+    "CAAGGTCCCCTTCTTCCTTTCCATTCCCGTCAGCTTCATTTCCCTAATCTCCGTACAAAT",
+    "CCCTAGCCTGACTCCCTTTCCTTTCCATCCTCACCAGACGCCCGCATGCCGGACCTCAAA",
+    "AGCGCAAACGCTAAAAACCGGTTGAGTTGACGCACGGAGAGAAGGGGTGTGTGGGTGGGT",
+]
+
+FOLDER = "../Session04/"
+EXT = ".txt"
+
+
+# Class with our Handler. It is a called derived from BaseHTTPRequestHandler
+# It means that our class inheritates all his methods and properties
+class TestHandler(http.server.BaseHTTPRequestHandler):
+
+    def do_GET(self):
+        """This method is called whenever the client invokes the GET method
+        in the HTTP protocol request"""
+
+        # Print the request line
+        termcolor.cprint(self.requestline, 'green')
+
+        # Analize the request line
+        request_line = self.requestline.split(' ')
+
+        # Get the path. It always start with the / symbol
+        path = request_line[1]
+
+        # Read the arguments
+        arguments = path.split('?')
+
+        # Get the verb. It is the first argument
+        verb = arguments[0]
+
+        # -- Content type header
+        # -- Both, the error and the main page are in HTML
+        contents = Path('error.html').read_text()
+        error_code = 404
+
+        if verb == "/":
+            # Open the form1.html file
+            # Read the index from the file
+            contents = Path('form4.html').read_text()
+            error_code = 200
+        elif verb == "/ping":
+            contents = """
+            <!DOCTYPE html>
+            <html lang = "en">
+            <head>
+            <meta charset = "utf-8" >
+              <title> PING </title >
+            </head >
+            <body>
+            <h2> PING OK!</h2>
+            <p> The SEQ2 server in running... </p>
+            <a href="/">Main page</a>
+            </body>
+            </html>
+            """
+            error_code = 200
+        elif verb == "/get":
+            # -- Get the argument to the right of the ? symbol
+            pair = arguments[1]
+            # -- Get all the pairs name = value
+            pairs = pair.split('&')
+            # -- Get the two elements: name and value
+            name, value = pairs[0].split("=")
+            n = int(value)
+
+            # -- Get the sequence
+            seq = SEQ_GET[n]
+
+            # -- Generate the html code
+            contents = f"""
+                        <!DOCTYPE html>
+                        <html lang = "en">
+                        <head>
+                        <meta charset = "utf-8" >
+                          <title> GET </title >
+                        </head >
+                        <body>
+                        <h2> Sequence number {n}</h2>
+                        <p> {seq} </p>
+                        <a href="/">Main page</a>
+                        </body>
+                        </html>
+                        """
+            error_code = 200
+        elif verb == "/gene":
+            # -- Get the argument to the right of the ? symbol
+            pair = arguments[1]
+            # -- Get all the pairs name = value
+            pairs = pair.split('&')
+            # -- Get the two elements: name and value
+            name, gene = pairs[0].split("=")
+
+            s = Seq()
+            s.seq_read_fasta(FOLDER + gene + EXT)
+            gene_str = str(s)
+            # -- Generate the html code
+            contents = f"""
+                        <!DOCTYPE html>
+                        <html lang = "en">
+                        <head>
+                        <meta charset = "utf-8" >
+                          <title> GENE </title >
+                        </head >
+                        <body>
+                        <h2> Gene: {gene}</h2>
+                        <textarea readonly rows="20" cols="80"> {gene_str} </textarea>
+                        <br>
+                        <br>
+                        <a href="/">Main page</a>
+                        </body>
+                        </html>
+                        """
+            error_code = 200
+        elif verb == "/operation":
+            # -- Get the argument to the right of the ? symbol
+            pair = arguments[1]
+            # -- Get all the pairs name = value
+            pairs = pair.split('&')
+            # -- Get the two elements: name and value
+            name, seq = pairs[0].split("=")
+            # -- Get the two elements of the operation
+            name, op = pairs[1].split("=")
+
+            # -- Create the sequence
+            s = Seq(seq)
+
+            if op == "comp":
+                result = s.seq_complement()
+            elif op == "rev":
+                result = s.seq_reverse()
+            else:
+                sl = s.len()
+                ca = s.seq_count_bases('A')
+                pa = "{:.1f}".format(100 * ca / sl)
+                cc = s.seq_count_bases('C')
+                pc = "{:.1f}".format(100 * cc / sl)
+                cg = s.seq_count_bases('G')
+                pg = "{:.1f}".format(100 * cg / sl)
+                ct = s.seq_count_bases('T')
+                pt = "{:.1f}".format(100 * ct / sl)
+
+                result = f"""
+                <p>Total length: {sl}</p>
+                <p>A: {ca} ({pa}%)</p>
+                <p>C: {cc} ({pc}%)</p>
+                <p>G: {cg} ({pg}%)</p>
+                <p>T: {ct} ({pt}%)</p>"""
+
+            contents = f"""
+                        <!DOCTYPE html>
+                        <html lang = "en">
+                        <head>
+                        <meta charset = "utf-8" >
+                          <title> OPERATION </title >
+                        </head >
+                        <body>
+                        <h2> Sequence </h2>
+                        <p>{seq}</p>
+                        <h2> Operation: </h2>
+                        <p>{op}</p>
+                        <h2> Result: </h2>
+                        <p>{result}</p>
+                        <br>
+                        <br>
+                        <a href="/">Main page</a>
+                        </body>
+                        </html>
+                        """
+            error_code = 200
+
+        # Generating the response message
+        self.send_response(error_code)  # -- Status line: OK!
+
+        # Define the content-type header:
+        self.send_header('Content-Type', 'text/html')
+        self.send_header('Content-Length', len(str.encode(contents)))
+
+        # The header is finished
+        self.end_headers()
+
+        # Send the response message
+        self.wfile.write(str.encode(contents))
+
+        return
+
+
+# ------------------------
+# - Server MAIN program
+# ------------------------
+# -- Set the new handler
+Handler = TestHandler
+
+# -- Open the socket server
+with socketserver.TCPServer(("", PORT), Handler) as httpd:
+
+    print("Serving at PORT", PORT)
+
+    # -- Main loop: Attend the client. Whenever there is a new
+    # -- clint, the handler is called
+    try:
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        print("")
+        print("Stoped by the user")
+        httpd.server_close()
