@@ -1,0 +1,30 @@
+1.Which is the request line?
+2.Which is the resource name that the client is asking for? (Path)
+
+a)URL: http://127.0.0.1:8080/hello.
+     1)GET /hello HTTP/1.1
+     2)> GET / HTTP/1.1
+       > Host: 127.0.01:8080
+       > User-Agent: curl/7.65.3
+       > Accept: */*
+       >
+
+b)URL: http://127.0.0.1:8080/file.html
+     1)GET /file.html HTTP/1.1
+     2)> GET / HTTP/1.1
+       > Host: 127.0.01:8080
+       > User-Agent: curl/7.65.3
+       > Accept: */*
+       >
+
+c)URL: http://127.0.0.1:8080/hi/there?name=virus&type=corona
+      1)GET /hi/there?name=virus&type=corona HTTP/1.1
+      2)> GET / HTTP/1.1
+        > Host: 127.0.01:8080
+        > User-Agent: curl/7.65.3
+        > Accept: */*
+        >
+
+d)What should be the URL that we have to write in the Browser for accessing the /dna/u5 resource?
+URL: http://127.0.0.1:8080/dna/u5
+     1)GET /dna/u5 HTTP/1.1
