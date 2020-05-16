@@ -7,7 +7,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # to avoid a problem when a port is using
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-IP = "192.168.1.45"
+IP = "127.0.0.1"
 PORT = 8080
 
 # bind the socket to the servers ip and port

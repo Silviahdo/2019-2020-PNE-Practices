@@ -2,7 +2,7 @@ import socket
 
 
 PORT = 8080
-IP = "192.168.1.45"
+IP = "127.0.0.1"
 
 
 number_con = 0

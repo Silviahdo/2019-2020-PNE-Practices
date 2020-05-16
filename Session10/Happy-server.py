@@ -2,7 +2,7 @@ import socket
 
 # Configure the Server's IP and PORT
 PORT = 8080
-IP = "192.168.1.45"
+IP = "127.0.0.1"
 
 # -- Step 1: create the socket
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

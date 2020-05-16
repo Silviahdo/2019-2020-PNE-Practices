@@ -3,7 +3,7 @@ import termcolor
 
 
 PORT = 8080
-IP = "192.168.1.45"
+IP = "127.0.0.1"
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
