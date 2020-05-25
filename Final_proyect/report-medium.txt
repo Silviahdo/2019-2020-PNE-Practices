@@ -1,0 +1,416 @@
+Test report-medium
+========================================
+
+---> Human Sequence endpoint
+
+* TEST 1:
+
+* Input:
+http://127.0.0.1:8080/geneSeq?specie=FRAT1
+
+* output:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sequence</title>
+</head>
+<body style="background-color: lightcyan;">
+<h1><b><FONT face = "Courier New">Gene sequence</b></FONT></h1>
+<a href="/"> Main page </a>
+<hr>
+<p> Selected gene:  FRAT1 <P>
+<p> Sequence: </p>
+<textarea readonly rows="60" cols="75" style="background-color:#F6D8FF"> CGGCTCCCGCGGCTGCAGGCGCGCGGCTAGAGTGCCTGGCGGGCTCCGGCTTCCGCGTCCGCCCCGGCCCCGGTCCAGACTTAGTCTTCAGCTCCGCGCCCGCTCCGCCGCGGCCCACCGCGCCCGCCGGCAGCCGAGCCCCCAGCGACGCCCGCACAGCTCCGGGTGCCCAGACAGGGGGCCATGCCGTGCCGGAGGGAGGAGGAAGAGGAAGCCGGCGAGGAGGCGGAGGGGGAGGAAGAGGAGGAGGACAGCTTCCTCCTACTGCAGCAGTCAGTGGCGCTGGGCAGCTCGGGCGAGGTGGACCGGCTGGTGGCCCAGATCGGCGAGACGCTGCAGCTGGACGCGGCGCAGCACAGCCCGGCCTCGCCGTGCGGGCCCCCGGGGGCGCCGCTGCGGGCCCCGGGGCCCCTGGCTGCGGCGGTGCCGGCGGACAAGGCCAGGTCCCCGGCGGTGCCGCTGCTGCTGCCGCCCGCGTTGGCGGAGACTGTGGGCCCGGCGCCCCCTGGGGTCCTGCGCTGCGCCCTGGGGGACCGCGGCCGCGTGCGGGGCCGCGCTGCGCCCTACTGCGTGGCCGAGCTCGCCACAGGCCCCAGCGCGCTGTCCCCACTGCCCCCTCAGGCCGACCTTGATGGGCCTCCGGGAGCTGGCAAGCAGGGCATCCCGCAGCCGCTGTCGGGTCCGTGCCGGCGAGGATGGCTCCGGGGCGCCGCCGCCTCCCGCCGCCTGCAGCAGCGACGCGGGTCCCAACCAGAAACCCGCACAGGCGACGACGACCCGCACCGGCTTCTGCAGCAGCTAGTGCTCTCTGGAAACCTCATCAAGGAGGCCGTGCGAAGGCTTCATTCGCGACGGCTGCAGTTACGTGCAAAGCTTCCCCAACGCCCGCTCCTGGGACCTCTGTCGGCCCCGGTGCATGAACCCCCTTCGCCTCGCAGCCCTCGCGCGGCCTGCAGTGACCCTGGCGCCTCCGGGAGGGCGCAGCTCAGAACTGGCGACGGCGTTCTTGTGCCTGGCAGCTAACACGCCCGGGGTGGCCACAGCGCCAGCCTCAGACTGGAGGGCAAGGGGTTCCCTTGAGGGCTGCAGTTCTACTCAGGCTGGTGGAGAACTCTGGCTTTTGGAAGCGAGAGTAAAAAGCTAATGACGAGGAACCGAAAAATCGCGAGTGTTTCGCGGGTAACTGGGGTTGAGGGCCAAAATATTTGGAATGAAGGACTTTGGCCCTATTTAAGGCAGATTTTACAGAGCGCACCTCAAACGTACAAGTCAGTAGGACTCCTTATTTGGCGTGACCCGACCTGGCCGCGGAGCCTGCATTTCCTCGCAGCCTCTCAGTGCCCTCCAGCCCCGCGACCATGTGGCCACAATCCACGCTTCTCCGGATCGCGGTGCGCCGGAACCACGGAGGATGATGCCAGTTACTTGCTTTACCTTTTCAGGGCTGGCTCCTGATCCACTTTGGGGGAGGAGAACATGAGTAGATAATTTCAGGGTGCAGCCCAATCTGCCAGACTTAAAAAAACCATCTTGTGTCTTTGGAGGTGCTGCTTAATACCAAACATGCGGTGCCATGAAGGGACCCTTTGGGGGTTGAATAGGAGTTAACCCCTGCGCTCTCTTTGCAACTGTCTCTCTTCTCAGAGTGGTGGGGGAAGGCTGTACGACACGGGTGGGGAAAGGAGGTGGGGGCGGGGAGTATTGAATGGTGGTGGAAGGGTAGAGAGGCGCGGAGTGAACCCCACGCCCTGTCTAAAGTGTATTTTCAGAGCCGGCCCGCCTCTCCTCGGTTCAAGGTCACTGTTTCCTGGGCACGCACTGGGTTGCGGGACAGAGTAGCCAGGTTCTGCCGGTGCTCGGAGAAGAGCGCAGTGTTTTGCAAGTGCTGGAGTCTCCTGAGGACACGCGCGTCGCCGCCACCGCGGGTGTGGGAAAGCGCGGACGTGCTGGGCGGCTGTGCTTCGGTAGGCGACCACCGCCCCTGGCCGCGCTCCGGGCTTTCACGGAAACTCCCGAGACCGGGCCCTGGGTTCCTCCTCTCCTACTCGGCTCTGCAGTCCTACTCAAGCGGGTGGCTCTGGGATCCTGGGGGCCTGGGTTGGGGGCTAGGGAGACGCCATGTGATGGACACTCCAGGGACACACAGCCTAGCACAGCAGCTTATAATGGGCTCTCCGGGGCCATTTGCAATAACAGCTGCAATTCCCTGGATAGACGAGTTGATTTCCTCCCTCTGCCCCTCCCCCAGCCATGCCAGCTGGCCTTTGTAAGTGCAGGAAACCGAGTAGAAAATGTGACCCTCCAAATGGAGAAGCTGCAGGCTTTGCCATTGTGAACCATGGTGAAGTGCTTGGAACATACTGTTCACTCACTCTAAAGGCGCTGAGACTGTGCTGTTGTTCTCGTTTTTATAGTCAATGGCTTGTTCATCATCCAGATGTGGCTACTGACATATCTACACTTCGCACCGGAGTGTCTGGAATTGTGGCTATCCTGATTATAGGATTTTAACTTAACTGAAATGCCTGCTTTGAATAAATGTGTTGGGTTTTTTGTTTGGTTTTATTTTATACTTGCCATCAGTGAAAAAGATGTACAGAACACATTTCTCTGATCTCCATAAACATGAAAACACTTGAAATCTC </textarea>
+
+</body>
+</html>
+
+* TEST 2:
+
+* Input:
+http://127.0.0.1:8080/geneSeq?specie=RNU6_269P
+
+* output:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sequence</title>
+</head>
+<body style="background-color: lightcyan;">
+<h1><b><FONT face = "Courier New">Gene sequence</b></FONT></h1>
+<a href="/"> Main page </a>
+<hr>
+<p> Selected gene:  RNU6_269P <P>
+<p> Sequence: </p>
+<textarea readonly rows="60" cols="75" style="background-color:#F6D8FF"> GCTTCCATAGCACAGACTAAAATTGGAAGGATGCCAAGATGATTAGCATGGTCCCTGCACAAGGATGACATGAATTTTTGAAACATTTCGTATTTTT </textarea>
+
+</body>
+</html>
+
+------ When you enter a wrong(IndexError)/non-existing(KeyError) gene it will return Error:
+
+* TEST 3:
+
+* Input:
+http://127.0.0.1:8080/geneSeq?specie=
+
+* output:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body style="background-color: #FE2E2E;">
+<h1><b><FONT face = "Courier New">ERROR</b></FONT></h1>
+<a href="/"> Main page </a>
+<hr>
+<p> Please write a valid human gene </p>
+</body>
+</html>
+
+* TEST 4:
+
+* Input:
+http://127.0.0.1:8080/geneSeq?specie=sequence
+
+* output:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body style="background-color: #FE2E2E;">
+<h1><b><FONT face = "Courier New">ERROR</b></FONT></h1>
+<a href="/"> Main page </a>
+<hr>
+<p> Please write a valid human gene </p>
+</body>
+</html>
+
+========================================
+
+---> Human Gene Info endpoint
+
+* TEST 1:
+
+* Input:
+http://127.0.0.1:8080/geneInfo?specie=FRAT1
+
+* output:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Info</title>
+</head>
+<body style="background-color: lightcyan;">
+<h1><b><FONT face = "Courier New">Information about the gene </b></FONT></h1>
+<a href="/"> Main page </a>
+<hr>
+<p> Selected gene:  FRAT1 <P>
+<p><b>Information: </b></p>
+<P> Id: ENSG00000165879 </p>
+<p> Length: 2645</p>
+<p> End: 97321915</p>
+<p> Start: 97319271</p>
+<p> Chromosome: 10</p>
+</body>
+</html>
+
+* TEST 2:
+
+* Input:
+http://127.0.0.1:8080/geneInfo?specie=RNU6_269P
+
+* output:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Info</title>
+</head>
+<body style="background-color: lightcyan;">
+<h1><b><FONT face = "Courier New">Information about the gene </b></FONT></h1>
+<a href="/"> Main page </a>
+<hr>
+<p> Selected gene:  RNU6_269P <P>
+<p><b>Information: </b></p>
+<P> Id: ENSG00000212379 </p>
+<p> Length: 97</p>
+<p> End: 58378148</p>
+<p> Start: 58378052</p>
+<p> Chromosome: 16</p>
+</body>
+</html>
+
+------ When you enter a wrong(IndexError)/non-existing(KeyError) gene it will return Error:
+
+* TEST 3:
+
+* Input:
+http://127.0.0.1:8080/geneInfo?specie=info
+
+* output:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Error</title>
+</head>
+<body style="background-color: #FE2E2E;">
+<h1><b><FONT face = "Courier New">ERROR</b></FONT></h1>
+<a href="/"> Main page </a>
+<hr>
+<p> Please write a valid human gene </p>
+</body>
+</html>
+
+* TEST 4:
+
+* Input:
+http://127.0.0.1:8080/geneInfo?specie=
+
+* output:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body style="background-color: #FE2E2E;">
+<h1><b><FONT face = "Courier New">ERROR</b></FONT></h1>
+<a href="/"> Main page </a>
+<hr>
+<p> Please write a valid human gene </p>
+</body>
+</html>
+
+========================================
+
+---> Human Gene Calculations endpoint
+
+* TEST 1:
+
+* Input:
+http://127.0.0.1:8080/geneCalc?specie=FRAT1
+
+* output:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sequence</title>
+</head>
+<body style="background-color: lightcyan;">
+<h1><b><FONT face = "Courier New">Calculations</b></FONT></h1>
+<a href="/"> Main page </a>
+<hr>
+<p> Selected gene:  FRAT1 <P>
+<p> The length of the sequence is: 2645 </P>
+<p>The percentage of A is: 0.18 %</p>
+<p>The percentage of G is: 0.32 %</p>
+<p>The percentage of C is: 0.3 %</p>
+<p>The percentage of T is: 0.2 %</p>
+
+</body>
+</html>
+
+* TEST 2:
+
+* Input:
+http://127.0.0.1:8080/geneCalc?specie=RNU6_269P
+
+* output:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sequence</title>
+</head>
+<body style="background-color: lightcyan;">
+<h1><b><FONT face = "Courier New">Calculations</b></FONT></h1>
+<a href="/"> Main page </a>
+<hr>
+<p> Selected gene:  RNU6_269P <P>
+<p> The length of the sequence is: 97 </P>
+<p>The percentage of A is: 0.32 %</p>
+<p>The percentage of G is: 0.21 %</p>
+<p>The percentage of C is: 0.18 %</p>
+<p>The percentage of T is: 0.3 %</p>
+
+</body>
+</html>
+
+------ When you enter a wrong(IndexError)/non-existing(KeyError) gene it will return Error:
+
+* TEST 3:
+
+* Input:
+http://127.0.0.1:8080/geneCalc?specie=calculations
+
+* output:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Error</title>
+</head>
+<body style="background-color: #FE2E2E;">
+<h1><b><FONT face = "Courier New">ERROR</b></FONT></h1>
+<a href="/"> Main page </a>
+<hr>
+<p> Please write a valid human gene </p>
+</body>
+</html>
+
+* TEST 4:
+
+* Input:
+http://127.0.0.1:8080/geneCalc?specie=
+
+* output:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body style="background-color: #FE2E2E;">
+<h1><b><FONT face = "Courier New">ERROR</b></FONT></h1>
+<a href="/"> Main page </a>
+<hr>
+<p> Please write a valid human gene </p>
+</body>
+</html>
+
+========================================
+
+---> Gene List endpoint
+
+* TEST 1:
+
+* Input:
+http://127.0.0.1:8080/geneList?specie=3&specie=1&chromosome=300000
+
+* output:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sequence</title>
+</head>
+<body style="background-color: lightcyan;">
+<h1><b><FONT face = "Courier New">Gene List</b></FONT></h1>
+<a href="/"> Main page </a>
+<hr>
+<p>Selected chromosome:  3 <P>
+<p>Start: 1 </P>
+<p>End: 300000 </P>
+<p>Gene List: <ul><p><li>LINC01986</li></p><p><li>AC066595.1</li></p><p><li>CHL1-AS2</li></p><p><li>AC066595.2</li></p><p><li>CHL1</li></p><p><li>RNU6-1194P</li></p></ul></body></html> </p>
+
+* TEST 2:
+
+* Input:
+http://127.0.0.1:8080/geneList?specie=4&specie=1&chromosome=5000
+
+* output:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sequence</title>
+</head>
+<body style="background-color: lightcyan;">
+<h1><b><FONT face = "Courier New">Gene List</b></FONT></h1>
+<a href="/"> Main page </a>
+<hr>
+<p>Selected chromosome:  4 <P>
+<p>Start: 1 </P>
+<p>End: 5000 </P>
+<p>Gene List: <ul>Sorry, choose another region</ul></body></html> </p>
+
+------ When you enter a wrong(TypeError)/non-existing(KeyError) gene it will return Error:
+
+* TEST 3:
+
+* Input: (leave everything on blank)
+http://127.0.0.1:8080/geneList?specie=&specie=&chromosome=
+
+* output:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Error</title>
+</head>
+<body style="background-color: #FE2E2E;">
+<h1><b><FONT face = "Courier New">ERROR</b></FONT></h1>
+<a href="/"> Main page </a>
+<hr>
+<p> Please enter a valid combination </p>
+</body>
+</html>
+
+* TEST 4:
+
+* Input: (enter only 2 values and leave the rest on blank)
+http://127.0.0.1:8080/geneList?specie=3&specie=&chromosome=2000
+
+* output:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Error</title>
+</head>
+<body style="background-color: #FE2E2E;">
+<h1><b><FONT face = "Courier New">ERROR</b></FONT></h1>
+<a href="/"> Main page </a>
+<hr>
+<p> Please enter a valid combination </p>
+</body>
+</html>
+
+* TEST 5:
+
+* Input: (enter incorrect values in every option)
+http://127.0.0.1:8080/geneList?specie=hola&specie=buenas&chromosome=tardes
+
+* output:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Error</title>
+</head>
+<body style="background-color: #FE2E2E;">
+<h1><b><FONT face = "Courier New">ERROR</b></FONT></h1>
+<a href="/"> Main page </a>
+<hr>
+<p> Please enter a valid combination </p>
+</body>
+</html>
+
+* TEST 6:
+
+* Input: (enter a start > end)
+http://127.0.0.1:8080/geneList?specie=2&specie=20000&chromosome=1
+
+* output:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Error</title>
+</head>
+<body style="background-color: #FE2E2E;">
+<h1><b><FONT face = "Courier New">ERROR</b></FONT></h1>
+<a href="/"> Main page </a>
+<hr>
+<p> Please enter a valid combination </p>
+</body>
+</html>
